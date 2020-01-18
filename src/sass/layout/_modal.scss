@@ -1,0 +1,138 @@
+$modalBgColor: rgba(#000, 0.75) !default;
+$modalContentColor: #fff !default;
+$modalCloseIconFill: #fff !default;
+$modalContainerBgColor: #0a3d62 !default;
+$modalContainerBoxShadow: rgba(#000, 0.5) !default;
+$modalContainerMaxWidth: 420px !default;
+$modalMorphOpenWidth: 340px !default;
+$modalMorphOpenHeight: 450px !default;
+
+.stan__c__modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  background-color: $modalBgColor;
+  z-index: 999;
+  pointer-events: auto;
+  opacity: 1;
+
+  &.is__hidden {
+    display: none;
+    pointer-events: none;
+  }
+  &.is__animated {
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+  }
+  &.js__fadeIn {
+    animation-name: fadeIn;
+  }
+
+  &--morphing {
+    transition: opacity 0.3s;
+  }
+
+  &__container {
+    flex-grow: 1;
+    max-width: $modalContainerMaxWidth;
+    margin: auto;
+    color: $modalContentColor;
+    text-align: center;
+    background-color: $modalContainerBgColor;
+    box-shadow: 0 0 8px 2px $modalContainerBoxShadow;
+
+    &.is__animated {
+      animation-fill-mode: both;
+    }
+
+    &.js__fadeInUp {
+      animation-duration: 250ms;
+      animation-name: fadeInUp;
+      animation-delay: 100ms;
+    }
+    &.js__fadeOutDown {
+      animation-duration: 250ms;
+      animation-name: fadeOutDown;
+    }
+
+    .stan__c__modal--morphing & {
+      transition: opacity 0.2s 0.5s, width 0.3s 0.1s, height 0.3s 0.1s, top 0.3s 0.1s, left 0.3s 0.1s, transform 0.3s 0.1s;
+      transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+      position: fixed;
+      opacity: 0;
+      z-index: 1;
+      width: 0;
+      height: 0;
+      transform: translate3d(0,0,0);
+
+      > * {
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      &.is__open {
+        top: 50% !important;
+        left: 50% !important;
+        opacity: 1;
+        width: $modalMorphOpenWidth !important;
+        height: $modalMorphOpenHeight !important;
+        transform: translate3d(-50%,-50%,0);
+        transition: width 0.3s 0.1s, height 0.3s 0.1s, top 0.3s 0.1s, left 0.3s 0.1s, transform 0.3s 0.1s;
+
+        > * {
+          opacity: 1;
+          transition: opacity 0.25s 0.3s;
+        }
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    path { fill: $modalCloseIconFill; }
+    > * { color: $modalCloseIconFill; }
+  }
+}
+
+body.is__noScroll { overflow: hidden; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+}

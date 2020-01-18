@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render modal should render custom template correctly 1`] = `
+<div
+  aria-hidden="false"
+  aria-labelledby="stan__c__modal__title"
+  class="stan__c__modal js__modal is__animated js__fadeIn"
+  role="dialog"
+>
+  
+          
+  <div
+    class="stan__c__modal__container is__animated js__fadeInUp"
+  >
+    
+            
+    <div
+      class="stan__c__modal__header"
+    >
+      
+              
+      <h2
+        class="stan__c__modal__title"
+      >
+        Modal title
+      </h2>
+      
+              
+      <button
+        class="stan__c__modal__close js__btnCloseModal"
+        type="button"
+      >
+        x
+      </button>
+      
+            
+    </div>
+    
+            
+    <div
+      class="stan__c__modal__body"
+    >
+      
+              
+      <h3>
+        Lorem ipsum
+      </h3>
+      
+              
+      <p>
+        Dolor sit amet, consectetur adipiscing elit. Nulla velit leo, sodales ut leo pharetra, lobortis imperdiet magna.
+              Fusce vel est lorem. 
+        <br />
+         Aenean tristique, purus sed scelerisque tincidunt, ligula dolor vulputate lorem, vitae suscipit dolor purus nec lorem.
+      </p>
+      
+            
+    </div>
+    
+            
+    <div
+      class="stan__c__modal__footer"
+    >
+      
+              
+      <button
+        class="stan__c__button js__customModalClose"
+      >
+        Fermer
+      </button>
+      
+            
+    </div>
+    
+          
+  </div>
+  
+        
+</div>
+`;
+
+exports[`Render modal should render modal correctly and add it to the DOM 1`] = `
+<div
+  aria-hidden="false"
+  aria-labelledby="dialog-title"
+  aria-modal="true"
+  class="stan__c__modal js__modal is__animated js__fadeIn"
+  id="dialog"
+  role="dialog"
+  tabindex="-1"
+>
+  
+        
+  <div
+    class="stan__c__modal__container is__animated js__fadeInUp"
+    role="document"
+  >
+    
+          
+    <div
+      class="stan__c__modal__header"
+    >
+      
+            
+      <h2
+        class="stan__c__modal__title"
+        id="dialog-title"
+      >
+        Modal title
+      </h2>
+      
+            
+      <button
+        aria-label="Close"
+        class="stan__c__modal__close js__btnCloseModal"
+        type="button"
+      >
+        
+              
+        
+        <svg
+          aria-hidden="true"
+          height="20"
+          role="img"
+          viewBox="0 0 352 512"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          
+          
+          <path
+            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19
+            0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28
+            75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28
+            12.28-12.28 32.19 0 44.48L109.28 256
+            9.21 356.07c-12.28 12.28-12.28 32.19 0
+            44.48l22.24 22.24c12.28 12.28 32.2 12.28
+            44.48 0L176 322.72l100.07 100.07c12.28
+            12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19
+            0-44.48L242.72 256z"
+          />
+          
+        
+        </svg>
+        
+            
+      </button>
+      
+          
+    </div>
+    
+          
+    <div
+      class="stan__c__modal__body"
+    >
+      
+            
+        
+      <h4>
+        Modal content
+      </h4>
+      
+        
+      <input
+        name="test"
+        type="text"
+      />
+      
+        
+      <button
+        class="stan__c__button"
+        type="button"
+      >
+        Button
+      </button>
+      
+      
+          
+    </div>
+    
+
+          
+          
+    <div
+      class="stan__c__modal__footer"
+    >
+      
+            Modal footer
+          
+    </div>
+    
+          
+        
+  </div>
+  
+      
+</div>
+`;
